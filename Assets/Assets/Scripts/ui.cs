@@ -36,9 +36,22 @@ public class ui : MonoBehaviour
     void Update()
     {
         // Update UI
-        attacklevel.text = "LVL " + player.GetComponent<player>().GetAttackLevel().ToString();
-        healthlevel.text = "LVL " + player.GetComponent<player>().GetHealthLevel().ToString();
-        defenselevel.text = "LVL " + player.GetComponent<player>().GetDefenseLevel().ToString();
+        if (player.GetComponent<player>().GetAttackLevel() == 10) {
+            attackupgradecost.text = "LVL MAX";
+        } else {
+            attacklevel.text = "LVL " + player.GetComponent<player>().GetAttackLevel().ToString();
+        }
+        if (player.GetComponent<player>().GetHealthLevel() == 10) {
+            healthupgradecost.text = "LVL MAX";
+        } else {
+            healthlevel.text = "LVL " + player.GetComponent<player>().GetHealthLevel().ToString();
+        }
+        if (player.GetComponent<player>().GetDefenseLevel() == 10) {
+            defenseupgradecost.text = "LVL MAX";
+        } else {
+            defenselevel.text = "LVL " + player.GetComponent<player>().GetDefenseLevel().ToString();
+        }
+        
         souls.text = player.GetComponent<player>().GetSouls().ToString();
         souls2.text = player.GetComponent<player>().GetSouls().ToString();
 
@@ -94,7 +107,7 @@ public class ui : MonoBehaviour
     public void UpgradeAttack() {
         int souls = player.GetComponent<player>().GetSouls();
         int cost = int.Parse(attackupgradecost.text);
-        if (souls >= cost) {
+        if (souls >= cost && player.GetComponent<player>().GetAttackLevel() < 10) {
             click.Play();
             player.GetComponent<player>().SetAttack(player.GetComponent<player>().GetAttackLevel() + 1);
             player.GetComponent<player>().SetSouls(souls - cost);
@@ -105,7 +118,7 @@ public class ui : MonoBehaviour
     public void UpgradeHealth() {
         int souls = player.GetComponent<player>().GetSouls();
         int cost = int.Parse(healthupgradecost.text);
-        if (souls >= cost) {
+        if (souls >= cost && player.GetComponent<player>().GetHealthLevel() < 10) {
             click.Play();
             player.GetComponent<player>().SetHealth(player.GetComponent<player>().GetHealthLevel() + 1);
             player.GetComponent<player>().SetSouls(souls - cost);
@@ -115,7 +128,7 @@ public class ui : MonoBehaviour
     public void UpgradeDefense() {
         int souls = player.GetComponent<player>().GetSouls();
         int cost = int.Parse(defenseupgradecost.text);
-        if (souls >= cost) {
+        if (souls >= cost && player.GetComponent<player>().GetDefenseLevel() < 10) {
             click.Play();
             player.GetComponent<player>().SetDefense(player.GetComponent<player>().GetDefenseLevel() + 1);
             player.GetComponent<player>().SetSouls(souls - cost);
