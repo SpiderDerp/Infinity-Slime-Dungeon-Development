@@ -153,6 +153,8 @@ MonoBehaviour:
   enemy: {fileID: 0}
   startButton: {fileID: 0}
   WinPopup: {fileID: 0}
+  LosePopup: {fileID: 0}
   click: {fileID: 0}
   victory: {fileID: 0}
   defeat: {fileID: 0}
+  bgm: {fileID: 0}
