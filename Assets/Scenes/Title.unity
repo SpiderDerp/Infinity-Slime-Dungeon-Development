@@ -739,8 +739,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Creator:\nSpiderDerp\n\nEnemy Sprites:\nStephen Challener (Redshrike)\nBlarumyrran\nLordNeo\n
-    hosted by OpenGameArt.org\r\n"
+  m_text: 'Creator:
+
+    SpiderDerp
+
+
+    Enemy Sprites:
+
+    Stephen Challener (Redshrike)
+
+    Blarumyrran
+
+    LordNeo
+
+    hosted
+    by OpenGameArt.org
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c521e326c8a4e444b6937cf842ed6d8, type: 2}
   m_sharedMaterial: {fileID: 2430635210083073176, guid: 7c521e326c8a4e444b6937cf842ed6d8, type: 2}
@@ -1192,7 +1207,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
