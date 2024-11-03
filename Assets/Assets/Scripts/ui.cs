@@ -36,12 +36,12 @@ public class ui : MonoBehaviour
     void Update()
     {
         // Update UI
-        if (player.GetComponent<player>().GetAttackLevel() == 10) {
+        if (player.GetComponent<player>().GetAttackLevel() == 15) {
             attackupgradecost.text = "LVL MAX";
         } else {
             attacklevel.text = "LVL " + player.GetComponent<player>().GetAttackLevel().ToString();
         }
-        if (player.GetComponent<player>().GetHealthLevel() == 10) {
+        if (player.GetComponent<player>().GetHealthLevel() == 15) {
             healthupgradecost.text = "LVL MAX";
         } else {
             healthlevel.text = "LVL " + player.GetComponent<player>().GetHealthLevel().ToString();
@@ -65,9 +65,15 @@ public class ui : MonoBehaviour
             case 7: case 8: case 9:
                 attackupgradecost.text = "50";
                 break;
-            case 10:
+            case 10: case 11: case 12:
                 attackupgradecost.text = "70";
-            break;
+                break;
+            case 13: case 14:
+                attackupgradecost.text = "100";
+                break;
+            case 15:
+                attackupgradecost.text = "-";
+                break;
         }
 
         switch (player.GetComponent<player>().GetHealthLevel()) {
@@ -80,9 +86,16 @@ public class ui : MonoBehaviour
             case 7: case 8: case 9:
                 healthupgradecost.text = "60";
                 break;
-            case 10:
+            case 10: case 11: case 12:
                 healthupgradecost.text = "80";
-            break;
+                break;
+            case 13: case 14:
+                healthupgradecost.text = "120";
+                break;
+            case 15:
+                healthupgradecost.text = "-";
+                break;
+            
         }
 
         switch (player.GetComponent<player>().GetDefenseLevel()) {
@@ -96,8 +109,8 @@ public class ui : MonoBehaviour
                 defenseupgradecost.text = "30";
                 break;
             case 10:
-                defenseupgradecost.text = "50";
-            break;
+                defenseupgradecost.text = "-";
+            break;  
         }
 
 
@@ -107,7 +120,7 @@ public class ui : MonoBehaviour
     public void UpgradeAttack() {
         int souls = player.GetComponent<player>().GetSouls();
         int cost = int.Parse(attackupgradecost.text);
-        if (souls >= cost && player.GetComponent<player>().GetAttackLevel() < 10) {
+        if (souls >= cost && player.GetComponent<player>().GetAttackLevel() < 15) {
             click.Play();
             player.GetComponent<player>().SetAttack(player.GetComponent<player>().GetAttackLevel() + 1);
             player.GetComponent<player>().SetSouls(souls - cost);
@@ -118,7 +131,7 @@ public class ui : MonoBehaviour
     public void UpgradeHealth() {
         int souls = player.GetComponent<player>().GetSouls();
         int cost = int.Parse(healthupgradecost.text);
-        if (souls >= cost && player.GetComponent<player>().GetHealthLevel() < 10) {
+        if (souls >= cost && player.GetComponent<player>().GetHealthLevel() < 15) {
             click.Play();
             player.GetComponent<player>().SetHealth(player.GetComponent<player>().GetHealthLevel() + 1);
             player.GetComponent<player>().SetSouls(souls - cost);
