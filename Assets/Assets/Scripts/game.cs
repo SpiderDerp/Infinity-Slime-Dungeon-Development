@@ -55,7 +55,7 @@ public class game : MonoBehaviour
 
             if (playerHealth <= 0 || enemyHealth <= 0)
             {
-                Debug.Log("Game Over");
+                //Debug.Log("Game Over");
                 gameStart = false;
                 //startButton.interactable = true;
                 if (enemyHealth <= 0) {

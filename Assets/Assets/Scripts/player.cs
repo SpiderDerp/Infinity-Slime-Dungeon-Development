@@ -15,7 +15,7 @@ public class player : MonoBehaviour
     private Vector3 originalPosition;
     [SerializeField] private Transform enemy; // Assign the enemy transform in the inspector
     [SerializeField] private Animator animator; // Assign the animator in the inspector
-    [SerializeField] private float slideDuration = 1f; // Duration of the slide
+    [SerializeField] private float slideDuration = 0.3f; // Duration of the slide
     [SerializeField] private Camera mainCamera; // Assign the main camera in the inspector
     [SerializeField] private float shakeDuration = 0.2f; // Duration of the camera shake
     [SerializeField] private float shakeMagnitude = 0.1f; // Magnitude of the camera shake
