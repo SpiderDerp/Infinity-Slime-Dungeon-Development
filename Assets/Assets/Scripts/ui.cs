@@ -36,18 +36,18 @@ public class ui : MonoBehaviour
     void Update()
     {
         // Update UI
-        if (player.GetComponent<player>().GetAttackLevel() == 15) {
-            attackupgradecost.text = "LVL MAX";
+        if (player.GetComponent<player>().GetAttackLevel() >= 15) {
+            attacklevel.text = "LVL MAX";
         } else {
             attacklevel.text = "LVL " + player.GetComponent<player>().GetAttackLevel().ToString();
         }
-        if (player.GetComponent<player>().GetHealthLevel() == 15) {
-            healthupgradecost.text = "LVL MAX";
+        if (player.GetComponent<player>().GetHealthLevel() >= 15) {
+            healthlevel.text = "LVL MAX";
         } else {
             healthlevel.text = "LVL " + player.GetComponent<player>().GetHealthLevel().ToString();
         }
-        if (player.GetComponent<player>().GetDefenseLevel() == 10) {
-            defenseupgradecost.text = "LVL MAX";
+        if (player.GetComponent<player>().GetDefenseLevel() >= 10) {
+            defenselevel.text = "LVL MAX";
         } else {
             defenselevel.text = "LVL " + player.GetComponent<player>().GetDefenseLevel().ToString();
         }
@@ -74,6 +74,9 @@ public class ui : MonoBehaviour
             case 15:
                 attackupgradecost.text = "-";
                 break;
+            default:
+                attackupgradecost.text = "-";
+                break;
         }
 
         switch (player.GetComponent<player>().GetHealthLevel()) {
@@ -95,6 +98,10 @@ public class ui : MonoBehaviour
             case 15:
                 healthupgradecost.text = "-";
                 break;
+            default:
+                healthupgradecost.text = "-";
+                break;
+            
             
         }
 
@@ -110,7 +117,10 @@ public class ui : MonoBehaviour
                 break;
             case 10:
                 defenseupgradecost.text = "-";
-            break;  
+                break;  
+            default:
+                defenseupgradecost.text = "-";
+                break;
         }
 
 
