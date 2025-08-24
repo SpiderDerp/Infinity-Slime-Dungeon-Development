@@ -25,6 +25,9 @@ public class game : MonoBehaviour
     void Start()
     {
         startButton.interactable = true;
+        if (SceneManager.GetActiveScene().name != "Room1" && SceneManager.GetActiveScene().name != "Title" && SceneManager.GetActiveScene().name != "Finale" ) { // Don't auto start game in Room1
+            StartGame();
+        }
         //bgm.GetComponent<MusicClass>().PlayMusic();
     }
 

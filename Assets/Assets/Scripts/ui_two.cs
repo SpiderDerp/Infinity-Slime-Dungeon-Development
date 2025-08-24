@@ -12,6 +12,7 @@ public class ui_two : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //bgm.GetComponent<MusicClass>().StopMusic();
         bgm.GetComponent<MusicClass>().PlayMusic();
     }
 
@@ -23,6 +24,7 @@ public class ui_two : MonoBehaviour
 
     public void GotoTitle() {
         click.Play();
+        bgm.GetComponent<MusicClass>().StopMusic();
         SceneManager.LoadScene("Title");
     }
 

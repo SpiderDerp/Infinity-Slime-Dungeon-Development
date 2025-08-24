@@ -142,7 +142,7 @@ public class player : MonoBehaviour
     }
 
     public void DealDamage(int attack) {
-        health -= (int) (attack * (1 - defense/(100+defense)));
+        health -= (int) (attack * (1 - defense/(50+defense)));
     }
 
     public void AddSouls(int amount) {

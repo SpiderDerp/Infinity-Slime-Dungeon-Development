@@ -36,17 +36,17 @@ public class ui : MonoBehaviour
     void Update()
     {
         // Update UI
-        if (player.GetComponent<player>().GetAttackLevel() >= 15) {
+        if (player.GetComponent<player>().GetAttackLevel() >= 20) {
             attacklevel.text = "LVL MAX";
         } else {
             attacklevel.text = "LVL " + player.GetComponent<player>().GetAttackLevel().ToString();
         }
-        if (player.GetComponent<player>().GetHealthLevel() >= 15) {
+        if (player.GetComponent<player>().GetHealthLevel() >= 20) {
             healthlevel.text = "LVL MAX";
         } else {
             healthlevel.text = "LVL " + player.GetComponent<player>().GetHealthLevel().ToString();
         }
-        if (player.GetComponent<player>().GetDefenseLevel() >= 10) {
+        if (player.GetComponent<player>().GetDefenseLevel() >= 20) {
             defenselevel.text = "LVL MAX";
         } else {
             defenselevel.text = "LVL " + player.GetComponent<player>().GetDefenseLevel().ToString();
@@ -56,46 +56,137 @@ public class ui : MonoBehaviour
         souls2.text = player.GetComponent<player>().GetSouls().ToString();
 
         switch (player.GetComponent<player>().GetAttackLevel()) {
-            case 0: case 1: case 2: case 3:
+            case 0:
+                attackupgradecost.text = "10";
+                break;
+            case 1:
                 attackupgradecost.text = "20";
                 break;
-            case 4: case 5: case 6:
+            case 2:
                 attackupgradecost.text = "30";
                 break;
-            case 7: case 8: case 9:
+            case 3:
+                attackupgradecost.text = "40";
+                break;
+            case 4:
                 attackupgradecost.text = "50";
                 break;
-            case 10: case 11: case 12:
+            case 5:
+                attackupgradecost.text = "60";
+                break;
+            case 6:
                 attackupgradecost.text = "70";
                 break;
-            case 13: case 14:
+            case 7:
+                attackupgradecost.text = "80";
+                break;
+            case 8:
+                attackupgradecost.text = "90";
+                break;
+            case 9:
                 attackupgradecost.text = "100";
                 break;
+            case 10:
+                attackupgradecost.text = "110";
+                break;
+            case 11:
+                attackupgradecost.text = "120";
+                break;
+            case 12:
+                attackupgradecost.text = "130";
+                break;
+            case 13:
+                attackupgradecost.text = "140";
+                break;
+            case 14:
+                attackupgradecost.text = "150";
+                break;
             case 15:
+                attackupgradecost.text = "160";
+                break;
+            case 16:
+                attackupgradecost.text = "170";
+                break;
+            case 17:
+                attackupgradecost.text = "180";
+                break;
+            case 18:
+                attackupgradecost.text = "190";
+                break;
+            case 19:
+                attackupgradecost.text = "200";
+                break;  
+            case 20:
                 attackupgradecost.text = "-";
                 break;
             default:
                 attackupgradecost.text = "-";
                 break;
+
         }
 
         switch (player.GetComponent<player>().GetHealthLevel()) {
-            case 0: case 1: case 2: case 3:
+            case 0:
+                healthupgradecost.text = "10";
+                break;
+            case 1:
+                healthupgradecost.text = "20";
+                break;
+            case 2:
                 healthupgradecost.text = "30";
                 break;
-            case 4: case 5: case 6:
+            case 3:
                 healthupgradecost.text = "40";
                 break;
-            case 7: case 8: case 9:
+            case 4:
+                healthupgradecost.text = "50";
+                break;
+            case 5:
                 healthupgradecost.text = "60";
                 break;
-            case 10: case 11: case 12:
+            case 6:
+                healthupgradecost.text = "70";
+                break;
+            case 7:
                 healthupgradecost.text = "80";
                 break;
-            case 13: case 14:
+            case 8:
+                healthupgradecost.text = "90";
+                break;
+            case 9:
+                healthupgradecost.text = "100";
+                break;
+            case 10:
+                healthupgradecost.text = "110";
+                break;
+            case 11:
                 healthupgradecost.text = "120";
                 break;
+            case 12:
+                healthupgradecost.text = "130";
+                break;
+            case 13:
+                healthupgradecost.text = "140";
+                break;
+            case 14:
+                healthupgradecost.text = "150";
+                break;
             case 15:
+                healthupgradecost.text = "160";
+                break;
+            case 16:
+                healthupgradecost.text = "170";
+                break;
+            case 17:
+                healthupgradecost.text = "180";
+                break;
+            case 18:
+                healthupgradecost.text = "190";
+                break;
+            case 19:
+                healthupgradecost.text = "200";
+                break;
+            case 20:
                 healthupgradecost.text = "-";
                 break;
             default:
@@ -106,31 +197,80 @@ public class ui : MonoBehaviour
         }
 
         switch (player.GetComponent<player>().GetDefenseLevel()) {
-            case 0: case 1: case 2: case 3:
+            case 0: 
                 defenseupgradecost.text = "10";
                 break;
-            case 4: case 5: case 6:
+            case 1:
                 defenseupgradecost.text = "20";
                 break;
-            case 7: case 8: case 9:
+            case 2:
                 defenseupgradecost.text = "30";
                 break;
+            case 3:
+                defenseupgradecost.text = "40";
+                break;
+            case 4:
+                defenseupgradecost.text = "50";
+                break;
+            case 5:
+                defenseupgradecost.text = "60";
+                break;
+            case 6:
+                defenseupgradecost.text = "70";
+                break;
+            case 7:
+                defenseupgradecost.text = "80";
+                break;
+            case 8:
+                defenseupgradecost.text = "90";
+                break;
+            case 9:
+                defenseupgradecost.text = "100";
+                break;
             case 10:
+                defenseupgradecost.text = "110";
+                break;
+            case 11:
+                defenseupgradecost.text = "120";
+                break;
+            case 12:
+                defenseupgradecost.text = "130";
+                break;
+            case 13:
+                defenseupgradecost.text = "140";
+                break;
+            case 14:
+                defenseupgradecost.text = "150";
+                break;
+            case 15:
+                defenseupgradecost.text = "160";
+                break;
+            case 16:
+                defenseupgradecost.text = "170";
+                break;
+            case 17:
+                defenseupgradecost.text = "180";
+                break;
+            case 18:
+                defenseupgradecost.text = "190";
+                break;
+            case 19:
+                defenseupgradecost.text = "200";
+                break;
+            case 20:
                 defenseupgradecost.text = "-";
                 break;  
             default:
                 defenseupgradecost.text = "-";
                 break;
         }
-
-
         
     }
 
     public void UpgradeAttack() {
         int souls = player.GetComponent<player>().GetSouls();
         int cost = int.Parse(attackupgradecost.text);
-        if (souls >= cost && player.GetComponent<player>().GetAttackLevel() < 15) {
+        if (souls >= cost && player.GetComponent<player>().GetAttackLevel() < 20) {
             click.Play();
             player.GetComponent<player>().SetAttack(player.GetComponent<player>().GetAttackLevel() + 1);
             player.GetComponent<player>().SetSouls(souls - cost);
@@ -141,7 +281,7 @@ public class ui : MonoBehaviour
     public void UpgradeHealth() {
         int souls = player.GetComponent<player>().GetSouls();
         int cost = int.Parse(healthupgradecost.text);
-        if (souls >= cost && player.GetComponent<player>().GetHealthLevel() < 15) {
+        if (souls >= cost && player.GetComponent<player>().GetHealthLevel() < 20) {
             click.Play();
             player.GetComponent<player>().SetHealth(player.GetComponent<player>().GetHealthLevel() + 1);
             player.GetComponent<player>().SetSouls(souls - cost);
@@ -151,7 +291,7 @@ public class ui : MonoBehaviour
     public void UpgradeDefense() {
         int souls = player.GetComponent<player>().GetSouls();
         int cost = int.Parse(defenseupgradecost.text);
-        if (souls >= cost && player.GetComponent<player>().GetDefenseLevel() < 10) {
+        if (souls >= cost && player.GetComponent<player>().GetDefenseLevel() < 20) {
             click.Play();
             player.GetComponent<player>().SetDefense(player.GetComponent<player>().GetDefenseLevel() + 1);
             player.GetComponent<player>().SetSouls(souls - cost);
